@@ -6,12 +6,13 @@ public class Multiply : MonoBehaviour
 {
     public GameObject ball;
 
-    void OnCollision(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "ball")
+        if (collision.gameObject.tag == "Ball")
         {
-            GameObject.Instantiate(ball);
-            transform.position = transform.position;
+         transform.position = collision.transform.position;
+         GameObject.Instantiate(ball, transform.position);
+        
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Score : MonoBehaviour
+public class EndZonePoint : MonoBehaviour
 {
     public Text scoreText;
     public int score;
@@ -19,4 +19,17 @@ public class Score : MonoBehaviour
         score++;
         scoreText.text = "Score: " + score;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Ball")
+        {
+            
+            Destroy(other.gameObject);
+            IncreaseScore();
+        }
+    }
+
+
+
 }

@@ -16,12 +16,14 @@ public class CameraLock : MonoBehaviour
  
         _camera = GetComponent<Camera>();
 
+        
 
         _fixedHeight = transform.position.x;
     }
 
     void Update()
     {
+        target = GameObject.FindWithTag("Ball").transform;
         if (target)
         {
 
